@@ -1,17 +1,17 @@
 cmake_minimum_required(VERSION 3.1)
 
-set(CMAKE_CXX_FLAGS_DEBUG  "-g")
-set(CMAKE_POSITION_INDEPENDENT_CODE ON)
-set(BUILD_SHARED_LIBS OFF)
-set(CMAKE_BUILD_TYPE Debug)
+set(CMAKE_CXX_FLAGS_DEBUG  "-g" CACHE "CMAKE_CXX_FLAGS_DEBUG" STRING FORCE)
+set(CMAKE_POSITION_INDEPENDENT_CODE ON CACHE "CMAKE_POSITION_INDEPENDENT_CODE" BOOL FORCE)
+set(BUILD_SHARED_LIBS OFF CACHE "BUILD_SHARED_LIBS" BOOL FORCE)
+set(CMAKE_BUILD_TYPE Debug CACHE "CMAKE_BUILD_TYPE" STRING FORCE)
 
-set(JANSSON_BUILD_SHARED_LIBS OFF)
-set(JANSSON_BUILD_DOCS OFF)
-set(JANSSON_STATIC_CRT ON)
+set(JANSSON_BUILD_SHARED_LIBS OFF CACHE "JANSSON_BUILD_SHARED_LIBS" BOOL FORCE)
+set(JANSSON_BUILD_DOCS OFF CACHE "JANSSON_BUILD_DOCS" BOOL FORCE)
+set(JANSSON_STATIC_CRT ON CACHE "JANSSON_STATIC_CRT" BOOL FORCE)
 
-set(BUILD_TESTING_STATIC OFF)
-set(BUILD_TESTING_SHARED OFF)
-set(BUILD_TESTING OFF)
+set(BUILD_TESTING_STATIC OFF CACHE "BUILD_TESTING_STATIC" BOOL FORCE)
+set(BUILD_TESTING_SHARED OFF CACHE "BUILD_TESTING_SHARED" BOOL FORCE)
+set(BUILD_TESTING OFF CACHE "BUILD_TESTING" BOOL FORCE)
 
 project(
   party_search_client
@@ -19,9 +19,9 @@ project(
   LANGUAGES C
 )
 
-add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/Dependencies/Headquarter Headquarter)
-add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/Dependencies/curl libcurl)
-add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/Dependencies/jansson jansson)
+add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/Dependencies/Headquarter)
+add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/Dependencies/curl)
+add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/Dependencies/jansson)
 
 
 # Look for required libraries
@@ -61,7 +61,7 @@ set_target_properties(jansson
     LIBRARY_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/bin/"
     RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/bin/"
 )
-set_target_properties(libcurl
+set_target_properties(curl
     PROPERTIES
     ARCHIVE_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/lib/"
     LIBRARY_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/bin/"
@@ -81,8 +81,8 @@ target_include_directories(
 
   PUBLIC
   ${CMAKE_CURRENT_SOURCE_DIR}/Dependencies/Headquarter/include
-  ${CMAKE_BINARY_DIR}/jansson/include
-  libcurl
+  ${CMAKE_CURRENT_SOURCE_DIR}/Dependencies/jansson/src
+  curl
 )
 
 
