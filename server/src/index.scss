@@ -1,0 +1,52 @@
+body,html {
+    margin:0;
+    padding:0;
+}
+body {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    text-align:center;
+}
+
+form {
+    display:flex;
+    justify-content:space-evenly;
+    margin:1rem 0;
+    select {
+        width: 10rem;
+        height: 1.5rem;
+        flex-grow: 1;
+        margin:0 .1rem;
+    }
+}
+.text-center {
+    text-align:center;
+}
+table {
+    border:0;
+    border-collapse: collapse;
+    thead {
+        background-color:#e0e0e0;
+        border-bottom:1px solid grey;
+        th {
+            min-width:10rem;
+            padding:.2rem .5rem;
+            text-align:left;
+            &:last-child {
+                width:20rem;
+            }
+        }
+    }
+    tbody {
+        tr:nth-child(even) {
+            background-color: #eeeeee;
+        }
+        td {
+            padding:.2rem;
+        }
+    }
+}

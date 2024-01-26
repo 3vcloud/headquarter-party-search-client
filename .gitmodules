@@ -1,9 +1,9 @@
-[submodule "Dependencies/Headquarter"]
-	path = Dependencies/Headquarter
+[submodule "client/Dependencies/Headquarter"]
+	path = client/Dependencies/Headquarter
 	url = https://github.com/reduf/Headquarter.git
-[submodule "Dependencies/curl"]
-	path = Dependencies/curl
+[submodule "client/Dependencies/curl"]
+	path = client/Dependencies/curl
 	url = https://github.com/curl/curl.git
-[submodule "Dependencies/jansson"]
-	path = Dependencies/jansson
+[submodule "client/Dependencies/jansson"]
+	path = client/Dependencies/jansson
 	url = https://github.com/akheron/jansson.git

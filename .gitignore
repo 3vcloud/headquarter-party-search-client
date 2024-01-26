@@ -70,3 +70,5 @@ win32build/
 
 # VSCode stuff
 .vscode/
+server/dist/
+node_modules/
