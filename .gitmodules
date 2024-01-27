@@ -1,6 +1,6 @@
 [submodule "client/Dependencies/Headquarter"]
 	path = client/Dependencies/Headquarter
-	url = https://github.com/reduf/Headquarter.git
+	url = https://github.com/3vcloud/Headquarter.git
 [submodule "client/Dependencies/curl"]
 	path = client/Dependencies/curl
 	url = https://github.com/curl/curl.git
